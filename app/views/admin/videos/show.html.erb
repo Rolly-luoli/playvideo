@@ -1,0 +1,20 @@
+<html>
+<head>
+<style>
+h2{background-color:#B45B3E;
+      color:white;}
+li{background-color:#00B271;
+      color:white;}
+ul{margin:0;padding:0;text-align:left;}
+</style>
+</head>
+<body>
+<h2>  Watch The Video </h2>
+<p id="notice"><%= notice %></p>
+<ul>
+<li ><%= link_to @video.name, @video.avatar_url if @video.avatar? %></li>
+</br>
+<%= link_to "back",  admin_videos_path%>
+</ul>
+</body>
+</html>

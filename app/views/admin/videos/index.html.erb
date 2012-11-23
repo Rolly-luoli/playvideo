@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+h1 {background-color:#B45B3E;;
+       color:white;}
+h3 {background-color:#479AC7;
+      color:white;}
+li{background-color:#00B271;
+      color:white;}
+ul{margin:0;padding:0;text-align:left;}
+</style>
+</head>
+<body>
+  <h1>Video List</h1>
+  <h3>Name</h3>
+  <ul>
+  <%  @videos.each do |video| %>
+<li><%= video.name %></li>
+   <span> <%= link_to "play", admin_video_path(video)%></span>&nbsp|&nbsp 
+   <span> <%= link_to'edit', edit_admin_video_path(video )%></span> &nbsp|&nbsp 
+    <span> <%= link_to 'destroy', admin_video_path(video), :confirm => 'Are you sure?',
+                                                                              :method => :delete %></span>
+  </tr>
+  <% end %>
+</ul>
+ 
+</br>
+<%= link_to 'upload new video ', new_admin_video_path%>
+<%= will_paginate @videos %>
+</body>
+
+
+
+
+
+
+
+

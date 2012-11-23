@@ -1,0 +1,40 @@
+<html>
+<head>
+  <style>
+  div.field {background-color:#479AC7;
+                           color:white;}                                                     
+  </style>
+</head>
+<body>
+<%= form_for([:admin, @video], :html => {:multipart =>true}) do |f|%>
+      <% if @video.errors.any? %>
+      <div id ="errorExplanation">
+            <h2> <%= pluralize(@video.errors.count, "error") %> prohibited 
+                        this video from being saved:</h2>
+             <ul>
+              <% @video.errors.full_messages.each do |msg|%>
+                     <li><%=  msg %></li>
+                     <% end %>
+             </ul>           
+      </div>
+      <% end %>
+      <div class= "field">
+            <%= f.label :name %></br>
+            <%= f.text_field :name%>
+      </div>
+      <div class="field">
+            <%= f.label :videocontent %> </br>
+            <%=  f.text_field :videocontent%>
+            <label> My  video</label>
+            <%=link_to @video.name,@video.avatar_url if @video.avatar? %>
+            <%= f.file_field :avatar %>
+            <%= f.hidden_field :avatar_cache %>
+
+
+      </div>
+      <div class="actions">
+            <%= f.submit %>
+      </div>
+      <% end %>
+      </body>
+      </html>

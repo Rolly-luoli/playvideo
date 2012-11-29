@@ -1,31 +1,23 @@
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="content-type"  content="text/html ;charset=UTF-8">
 <title>Onetrip</title>
-<style>
-h1 {background-color:#B45B3E;;
-       color:white;}
-h3 {background-color:#479AC7;
-       color:white;}
-ul{ background:#fff;margin:0;padding:0;text-align:left;}
-li {background-color:#00B271; list-style:none;}
-
-
-</style>  
-
 </head>
 <body>
-<h1>Video  List</h1>
+<div>
+<h1>Video  List <img src="<%= asset_path 'logo.png' %>"/></h1>
+</div> 
+
 <h3>Name</h3>
-<ul>
- <%  @videos.each do |video| %>
-<li style="none"> <%= video.name %></li>
-<%= link_to "play", video%>
+<ul class="name_list">
+<%  @videos.each do |video| %>
+<li class="name_list_li"><a href="<%= video_path(video) %>"><%= video.name %></a></li>
 <% end %>
 </ul>
- 
-</br>
-<%= will_paginate @videos %>
+<br />
+<%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页'  %>
+<br />
+<div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </html>
 

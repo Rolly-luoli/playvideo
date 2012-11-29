@@ -1,16 +1,12 @@
 <html>
 <head>
-<style>
-h1 {background-color:#B45B3E;;
-       color:white;}
-</style>
 </head>
-
 <body>
-<h1>Editing video</h1>
+<h1>Editing video<img src="<%= asset_path 'logo.png' %>"/></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'back',admin_videos_path %>
+<a href="<%= admin_videos_path%>">back</a>
+<div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
+</body>
 </body>
 </html>

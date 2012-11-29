@@ -1,12 +1,11 @@
 Playvideo1::Application.routes.draw  do
 root  :to => "videos#index"
 resources :videos , :only => [:index, :show]  
-match  'play'  => 'videos#show'
 namespace :admin do
 root  :to => "videos#index" 
 resources  :videos
 end
-
+resources  :sessions
   
 
   # The priority is based upon order of creation:

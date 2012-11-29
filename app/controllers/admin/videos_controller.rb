@@ -1,77 +1,67 @@
-class Admin::VideosController < ApplicationController
-    http_basic_authenticate_with :name => "dhh", :password => "secret"
-     def index
+class Admin::VideosController < Admin::ApplicationController
+
+    def index
         #@videos =Video.all
-          @videos = Video.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+      check_login()
+      @videos = Video.paginate(:page => params[:page], :per_page => 5).order('id DESC')
+    end
 
-          respond_to do |format|
-               format.html #index.html.erb
-               format.json  { render :json =>@videos}
-          end    
-     end
+    def  new 
+      check_login()
+      @video =Video.new 
+    end 
 
-     def  new 
-          @video =Video.new 
+    def create
+      check_login()
+      @video =Video.new(params[:video])
 
-          respond_to do |format|
-                  format.html #new.html.erb
-                  format.json   {render :json =>@video} 
+      respond_to do |format|
+           if @video.save 
+           format.html { redirect_to(admin_videos_path,
+                                                         :notice => "Video Was  sucessfully uploaded"  ) }
+           else 
+           format.html  {render :action =>'new' }
+          end                                      
           end
-      end 
+    end 
 
-     def create
-           @video =Video.new(params[:video])
+    def show 
+      check_login()
+      @video = Video.find( params[:id] )    
+    end
+    def edit 
+      check_login()
+      @video = Video.find(params[:id])
 
-          respond_to do |format|
-                    if @video.save 
-                          format.html { redirect_to(@video,
-                                                           :notice => "Video Was  sucessfully uploaded"  ) }
-                          format.json  { render  :json =>@video,
-                                                             :status => :created,   :location =>@video}
-                      else 
-                          format.html  {render :action =>'new' }
-                           format.json  {render :json =>@video.errors,
-                                                            :status => :unprocessable_entity } 
-                      end                                      
-          end
-     end 
-
-     def show 
-           @video = Video.find( params[:id] )    
-
-          respond_to do |format|
-                format.html #show.html.erb
-                format.json  { render :json =>@video} 
-           end      
-     end
-     def edit 
-          @video = Video.find(params[:id])
-
-     end
-     def update
-          @video = Video.find(params[:id])
+    end
+    def update
+     check_login()
+     @video = Video.find(params[:id])
  
-          respond_to do |format|
-          if @video.update_attributes(params[:video])
-               format.html  { redirect_to( @video,
-                                               :notice => 'video was successfully updated.') }
-               format.json  { head  :no_content }
-          else
-               format.html  { render :action => "edit" }
-               format.json  { render :json => @video.errors,
-                                                :status => :unprocessable_entity }
-          end
-          end
+     respond_to do |format|
+         if @video.update_attributes(params[:video])
+         format.html  { redirect_to( admin_videos_path,
+                                                        :notice => 'video was successfully updated.') }
+         else
+         format.html  { render :action => "edit" }
+         end
      end
+    end
 
      
-     def destroy
-           @video = Video.find(params[:id])
-           @video .destroy
+    def destroy
+      check_login()
+      @video = Video.find(params[:id])
+      @video .destroy
            
-           respond_to do |format|
-                format.html { redirect_to admin_videos_url }
-                format.json { head  :no_content}
-           end     
-     end
+      respond_to do |format|
+          format.html { redirect_to admin_videos_url }
+      end     
+    end
+     private 
+    def check_login
+        if session[:user_id] == nil
+             redirect_to new_session_path
+        end
+    end
 end

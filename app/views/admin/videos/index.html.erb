@@ -1,32 +1,23 @@
 <html>
 <head>
-<style>
-h1 {background-color:#B45B3E;;
-       color:white;}
-h3 {background-color:#479AC7;
-      color:white;}
-li{background-color:#00B271;
-      color:white;}
-ul{margin:0;padding:0;text-align:left;}
-</style>
 </head>
 <body>
-  <h1>Video List</h1>
-  <h3>Name</h3>
-  <ul>
-  <%  @videos.each do |video| %>
-<li><%= video.name %></li>
-   <span> <%= link_to "play", admin_video_path(video)%></span>&nbsp|&nbsp 
-   <span> <%= link_to'edit', edit_admin_video_path(video )%></span> &nbsp|&nbsp 
-    <span> <%= link_to 'destroy', admin_video_path(video), :confirm => 'Are you sure?',
-                                                                              :method => :delete %></span>
-  </tr>
-  <% end %>
+<h1>Video List<img src="<%= asset_path 'logo.png' %>"/></h1>
+<h3>Name</h3>
+<ul class="name_list">
+<%  @videos.each do |video| %>
+<li class="name_list_li"><%= video.name %></li>
+<span> <%= link_to "show", admin_video_path(video)%></span>&nbsp|&nbsp 
+<span> <%= link_to'edit', edit_admin_video_path(video )%></span> &nbsp|&nbsp 
+<span> <%= link_to 'destroy', admin_video_path(video), :confirm => 'Are you sure?',
+                                                                                                 :method => :delete %></span><br /><br />
+<% end %>
 </ul>
- 
-</br>
-<%= link_to 'upload new video ', new_admin_video_path%>
-<%= will_paginate @videos %>
+<a  href="<%= new_admin_video_path %>">upload new video</a>
+<br />
+<br />
+<%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页' %>
+<div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 
 

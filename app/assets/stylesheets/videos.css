@@ -1,0 +1,34 @@
+h1 {
+  background-color:#CD5C5C;
+  color:white; 
+      }
+h3 ,#footer {
+  background-color:#DCDCDC;
+  color:black; 
+  height:  30px; 
+  line-height: 30px;  
+      }
+
+li.name_list_li {
+  background-color:#F8F8FF;
+ list-style: none;  
+ padding-left: 15px;
+ padding-bottom: 10px;
+ background: url("/assets/play.jpg") no-repeat;
+}
+ul.name_list{ 
+  background:#fff;
+  margin:0;
+  padding:0;
+   }
+a{
+  text-decoration: none;
+}
+a:hover {
+ background :#F0E68C;
+}
+div.jp-video-player
+{
+  position:relative;
+}
+

@@ -5,22 +5,22 @@
 <%= form_for([:admin, @video], :html => {:multipart =>true}) do |f|%>
 <% if @video.errors.any? %>
 <div id ="errorExplanation">
-  <h2> <%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
-  <ul>
-    <% @video.errors.full_messages.each do |msg|%>
-    <li><%=  msg %></li>
-    <% end %>
-  </ul>           
+<h2> <%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
+<ul>
+<% @video.errors.full_messages.each do |msg|%>
+<li><%=  msg %></li>
+<% end %>
+</ul>           
 </div>
 <% end %>
 <div class= "field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name%>
-</div>
-<%= f.file_field :avatar %><br />
-<%= f.hidden_field :avatar_cache %>      
+<h3>视频名称</h3>
+<p id="text"><%= f.text_field :name%></p>
+<p id="avatar"><%= f.file_field :avatar %></p>
+<p id="avatar_cache"><%= f.hidden_field :avatar_cache %></p>
+</div>      
 <div class="actions">
-  <%= f.submit %>
+<%= f.submit %>
 </div>
 <% end %>
 </body</html>

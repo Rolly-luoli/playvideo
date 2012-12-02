@@ -4,9 +4,11 @@
 </style>
 </head>
 <body>
-<h1> New  Video</h1>
+<div id="head"><h1>新视频</h1></div>
 <%= render  'form'  %>
-<%= link_to 'back',  admin_videos_path%>
+<div id="back">
+<a href="<%= admin_videos_path%>">返回</a>
+</div>
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </body>

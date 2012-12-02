@@ -21,7 +21,8 @@
   </script>
 </head>
 <body>
-<h1>  Watch The Video<img src="<%= asset_path 'logo.png' %>"/> </h1>
+<div id="head"><h1>观看视频<img src="<%= asset_path 'logo.png' %>"/></h1>
+</div>
 <div class="players">
     <div class="jp-video jp-video-270p">
         <div class="jp-type-single">
@@ -52,8 +53,11 @@
 </div>
 </div>
 </div>
-</div>                    
-<a href="<%= videos_path %>">back</a>
+</div> 
+<div id="back">
+    <a href="<%= videos_path %>">返回</a>
+</div>                   
+
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </html>

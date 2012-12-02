@@ -2,21 +2,28 @@
 <head>
 </head>
 <body>
-<h1>Video List<img src="<%= asset_path 'logo.png' %>"/></h1>
-<h3>Name</h3>
-<ul class="name_list">
-<%  @videos.each do |video| %>
-<li class="name_list_li"><%= video.name %></li>
-<span> <%= link_to "show", admin_video_path(video)%></span>&nbsp|&nbsp 
-<span> <%= link_to'edit', edit_admin_video_path(video )%></span> &nbsp|&nbsp 
-<span> <%= link_to 'destroy', admin_video_path(video), :confirm => 'Are you sure?',
-                                                                                                 :method => :delete %></span><br /><br />
+<div id="head">
+<h1>视频列表<img src="<%= asset_path 'logo.png' %>"/></h1>
+</div>
+<div id="content">
+<ul>
+<% @videos.each do |video| %>
+<li><%= video.name %>
+<span id="show"> <%= link_to "播放", admin_video_path(video)%></span>
+<span id="edit"> <%= link_to'编辑', edit_admin_video_path(video )%></span>
+<span id="destroy"> <%= link_to '删除', admin_video_path(video), 
+                                       :confirm => 'Are you sure?',
+                                       :method => :delete %></span>
+</li>                 
 <% end %>
 </ul>
-<a  href="<%= new_admin_video_path %>">upload new video</a>
+</div>
+<a href="<%= new_admin_video_path %>">上传视频</a>
 <br />
 <br />
+<div id="will_paginate">
 <%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页' %>
+</div>
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 

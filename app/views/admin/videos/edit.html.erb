@@ -2,10 +2,13 @@
 <head>
 </head>
 <body>
-<h1>Editing video<img src="<%= asset_path 'logo.png' %>"/></h1>
-
+<div id="head">
+<h1>编辑视频<img src="<%= asset_path 'logo.png' %>"/></h1>
+</div>
 <%= render 'form' %>
-<a href="<%= admin_videos_path%>">back</a>
+<div id="back">
+<a href="<%= admin_videos_path%>">返回</a>
+</div>
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </body>

@@ -4,19 +4,19 @@
 <title>Onetrip</title>
 </head>
 <body>
-<div>
-<h1>Video  List <img src="<%= asset_path 'logo.png' %>"/></h1>
+<div id="head">
+<h1>视频列表<img src="<%= asset_path 'logo.png' %>"/></h1>
 </div> 
-
-<h3>Name</h3>
-<ul class="name_list">
+<div id="content">
+<ul>
 <%  @videos.each do |video| %>
-<li class="name_list_li"><a href="<%= video_path(video) %>"><%= video.name %></a></li>
+<li><a href="<%= video_path(video) %>"><%= video.name %></a></li>
 <% end %>
 </ul>
-<br />
+</div>
+<div id="will_paginate">
 <%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页'  %>
-<br />
+</div>
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </html>

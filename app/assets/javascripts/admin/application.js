@@ -1,6 +1,6 @@
 /*
 *= require jquery
 *= require jquery_ujs
-*= require jquery.min
-*=require jquery.jplayer.min 
+*= require jquery-1.7.2.min
+*=require  jquery.jplayer.min 
 */

@@ -1,6 +1,5 @@
 <html>
 <head>
-<meta http-equiv="content-type"  content="text/html ;charset=UTF-8">
 <title>Onetrip</title>
 </head>
 <body>
@@ -15,7 +14,8 @@
 </ul>
 </div>
 <div id="will_paginate">
-<%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页'  %>
+<%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页',
+:window =>0 %>
 </div>
 <div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>

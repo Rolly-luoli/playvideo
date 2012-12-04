@@ -1,13 +1,10 @@
-<div id="head"><h1>登录验证</h1></div>
+<div class="session_for_login">
 <%= form_tag sessions_path do -%>
-<label for="login" type="width:100px;height:40px">用户</label>
-<%= text_field_tag :login, params[:login] %>
+<label for="login">用户</label>
+<%= text_field_tag :login, params[:login] %><br />
 <label for="password">密码</label>
-<%= password_field_tag :password, params[:password] %>
-  
+<%= password_field_tag :password, params[:password] %><br />
 <%= submit_tag "登录" %>
 <% end %>
+</div>
 
-<br />
-
-<div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>

@@ -9,6 +9,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :set_content_type  
           
     def store_dir
-          'uploads'
+        'uploads'
      end
 end

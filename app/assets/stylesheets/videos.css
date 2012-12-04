@@ -4,42 +4,54 @@
 }
 body{
   font-family:Arial,Verdana,"Sans-seri";
-  font-size:medium;
   background:#DCDCDC;
+  width:100%;
 
 }
-#head h1{
-  width:100%;
-  height:60px;
-  background-color:#CD5C5C;
-  color:white;
-  border:1px solid #FFFAF0;
-  line-height:60px;
+.clearfix{ display:block; }
+
+img{ border:0px;}
+#header{ 
+  background:#b61313;
+  height:79px;
+}
+#header h1 { 
+  float:left;
+  margin-left: 20px;
+  margin-top: 23px;
+} 
+#header h1 a {
+  width: 136px;
+  height: 33px;
+  display:block;
+  background:url(logo.jpg) no-repeat; 
+  text-align: center;
+  line-height: 49px; 
+  font-size: 20px; 
+  text-indent: -10000px;
+}
+#header img.Subtitle {
+  float: right;
+  margin-right: 20px;
+  margin-top: 31px; 
 }
 #content ul {
   width:100%;
 }
 #content ul li{
-  width:100%;
-  height: 40px;
-  line-height:40px;
+  height: 80px;
+  line-height:80px;
+  font-size:2em;
   border:1px solid #FFFAF0;
   list-style:none;
-  background: url("/assets/play.jpg") no-repeat;
+  background: url("/assets/play.jpg") no-repeat 0px 32px;
   padding-left:20px;
-  position:relative;
 }
 #content ul li span{
-  position: absolute;
-}
-#show{
-  right:10%;
-}
-#edit{
-  right:7%;
-}
-#destroy{
-  right:4%;
+  float:right;
+  margin-right:7px;
+  display:inline-block;
+  position: relative;
 }
 a{
   text-decoration:none;
@@ -48,13 +60,27 @@ a:hover{
   background:#F0E68C;
   color:#000000;
 }
+
 #will_paginate{
   word-spacing: 10px;
   display:block;
   border:1px solid #FFFAF0;
-}
-#back{
   text-align:right;
+}
+
+.player h1 {
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+.player .video {
+  margin: 10px auto;
+}
+#back {
+  text-align:right;
+  margin: 20px 20px 20px 0;
+}
+#back a {
+  color: #B61313;
 }
 
 #footer{
@@ -64,8 +90,42 @@ a:hover{
   line-height:60px;
   text-align:center;
 }
-div.field #text{
-  width:100%;
-  height: 100px;
+
+
+.file{
+  height:60px;
+  line-height:60px;
 }
+.videoname_head{
+  margin-top:10px;
+  margin-bottom:10px;
+
+}
+.videoname input{
+  height:21px;
+  line-height:21px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.file_field input{
+  text-align:center;
+  display:block;
+  margin-top:10px;
+  margin-bottom:10px;
+  position:relative;
+
+}
+div.up_loader{
+  height:30px;
+  line-height:30px;
+}
+div.actions input{
+  height:20px;
+  width:70px;
+}
+div.session_for_login{
+  line-height:30px;
+  margin-top:20px;
+}
+
 

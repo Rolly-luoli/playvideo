@@ -11,7 +11,11 @@
 </head>
 <body>
 <%= flash[ :notice ] %>
+<div id="header" class="clearfix">
+<h1><%= link_to '壹旅游', videos_path %></h1>
+<img class="Subtitle" src="<%= asset_path 'video.jpg' %>" alt="video" title="video" />
+</div>
 <%= yield %>
-
+<div id="footer"><span>Copyright &nbsp © &nbsp 壹旅游 2011-2012</span></div>
 </body>
 </html>

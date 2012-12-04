@@ -606,21 +606,7 @@ div.jp-video-full div.jp-video-play {
 	height:100%;
 	z-index:1000;
 }
-a.jp-video-play-icon {
-	position:relative;
-	display:block;
-	width: 112px;
-	height: 100px;
-
-	margin-left:-56px;
-	margin-top:-50px;
-	left:50%;
-	top:50%;
-
-	background: url("#") 0 0 no-repeat;
-	text-indent:-9999px;
-}
-div.jp-video-play:hover a.jp-video-play-icon {
+div.jp-video-play:hover {
 	background: url("#") 0 -100px no-repeat;
 }
 

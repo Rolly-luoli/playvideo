@@ -18,7 +18,7 @@ class Admin::VideosController < Admin::ApplicationController
       respond_to do |format|
            if @video.save 
            format.html { redirect_to(admin_videos_path,
-                                                         :notice => "Video Was  sucessfully uploaded"  ) }
+                                    :notice => "Video Was  sucessfully uploaded"  ) }
            else 
            format.html  {render :action =>'new' }
           end                                      
@@ -41,7 +41,7 @@ class Admin::VideosController < Admin::ApplicationController
      respond_to do |format|
          if @video.update_attributes(params[:video])
          format.html  { redirect_to( admin_videos_path,
-                                                        :notice => 'video was successfully updated.') }
+                                   :notice => 'video was successfully updated.') }
          else
          format.html  { render :action => "edit" }
          end

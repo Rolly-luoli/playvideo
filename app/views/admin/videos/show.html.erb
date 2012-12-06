@@ -22,7 +22,8 @@
         });
     </script>
 <% end %>
-<div class="player">       
+<div class="player">
+<h1><%= @video.name %></h1>        
 <div class="video">
 <div id="jp_container_1" class="jp-video jp-video-360p">
     <div class="jp-type-single">
@@ -48,6 +49,6 @@
 </div>
 </div>
 <div id="back">                           
-<a href="<%= admin_videos_path%>"><<返回列表</a>
+<a href="<%= admin_videos_path%>">返回列表</a>
 </div>
 

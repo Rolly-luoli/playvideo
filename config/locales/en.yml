@@ -1,10 +1,12 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 en:
-     previous: '前一页'
-     next: '下一页'
-
-  
-
-
-
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_entries_info:
+      single_page:
+        zero:  "there is no video"
+        one:   "Displaying one video"
+        other: "Displaying all %{count} videos"
+      multi_page: "Displaying date %{from} - %{to} %{count} in total"

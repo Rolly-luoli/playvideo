@@ -2,3 +2,11 @@
 *= require jplayer.pink.flag
 *= require videos
 */
+#content ul li{
+  height: 70px;
+  line-height:70px;
+  font-size:1.8em;
+  border:1px solid #FFFAF0;
+  list-style:none;
+  padding-left:20px;
+}

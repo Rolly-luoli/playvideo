@@ -1,13 +1,22 @@
 <div id="content">
 <ul>
 <% @videos.each do |video| %>
-<li><a href="<%= video_path(video) %>"><%= video.name %></a></li>
+<li>
+<span class="style_decration">●</span>
+<a href="<%= video_path(video) %>"><%= video.name %></a>
+</li>
 <% end %>
 </ul>
 </div>
+<div class="pag_info_will_pag">
 <div id="will_paginate">
-<%= will_paginate @videos,:previous_label => '上一页', :next_label => '下一页',:window =>0 %>
+<%= will_paginate @video,:page_links => false  %>
+<div class="page_info">
+<%= page_entries_info @videos %>
+</div> 
+</div> 
 </div>
+
 
 
 

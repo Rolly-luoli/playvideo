@@ -38,36 +38,73 @@ img{ border:0px;}
 #content ul {
   width:100%;
 }
-#content ul li{
-  height: 80px;
-  line-height:80px;
-  font-size:2em;
-  border:1px solid #FFFAF0;
-  list-style:none;
-  background: url("/assets/play.jpg") no-repeat 0px 32px;
-  padding-left:20px;
+
+span.style_decration{
+  float:left;
+  color: #A2201A;
+  font-size: 25px;
+  width: 15px;
 }
-#content ul li span{
-  float:right;
-  margin-right:7px;
-  display:inline-block;
-  position: relative;
+li:hover{
+  background-color:#87CEFA;
+}
+li a{
+  margin-left:10px;
+  padding-left:10px;
+
 }
 a{
   text-decoration:none;
 }
 a:hover{
-  background:#F0E68C;
+  background:#F08080;
   color:#000000;
 }
 
-#will_paginate{
-  word-spacing: 10px;
-  display:block;
-  border:1px solid #FFFAF0;
-  text-align:right;
-}
+.pagination {  
+  padding: 3px;  
+  margin: 30px 1px 30px 30px;
+  float:right;
+  display:inline-block;
+  text-align: right; 
+  position: relative; 
+}  
+.pagination a {  
+  padding: 2px 5px 2px 5px;  
+  margin: 2px;  
+  border: 1px solid #aaaadd;  
+  text-decoration: none;  
+  color: #000099;  
+}  
+.pagination a:hover, .pagination a:active {  
+  border: 1px solid #000099;  
+  color: #000;  
+}  
+.pagination span.current {  
+  padding: 2px 5px 2px 5px;  
+  margin: 2px;  
+  border: 1px solid #000099;  
+  font-weight: bold;  
+  background-color: #000099;  
+  color: #FFF;  
+}  
+.pagination span.disabled {  
+  display: none;
 
+}
+.page_info{
+  float:right;
+  text-align:right;
+  display:inline-block;
+  margin:35px -30px 10px 30px;
+  font-size:0.5em;
+  position: relative;
+}  
+.pag_info_will_pag{
+  width:100%;
+  height:40px;
+  margin:10px auto 30px auto;
+}
 .player h1 {
   margin: 20px 0 0 0;
   text-align: center;
@@ -79,19 +116,26 @@ a:hover{
   text-align:right;
   margin: 20px 20px 20px 0;
 }
-#back a {
-  color: #B61313;
+div.up_loader{
+  margin-top:20px;
+}
+.up_loader a,#back a {
+  padding: 2px 5px 2px 5px;  
+  margin: 2px;  
+  border: 1px solid #C0C0C0;  
+  text-decoration: none;  
+  color:#000;
 }
 
 #footer{
   width:100%;
-  height:60px;
+  height:65px;
   background:#696969;
-  line-height:60px;
+  line-height:65px;
   text-align:center;
+  margin-top:40px auto;
+  position:absolute;
 }
-
-
 .file{
   height:60px;
   line-height:60px;
@@ -114,10 +158,6 @@ a:hover{
   margin-bottom:10px;
   position:relative;
 
-}
-div.up_loader{
-  height:30px;
-  line-height:30px;
 }
 div.actions input{
   height:20px;
